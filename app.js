@@ -18,8 +18,14 @@ app.get("/",async(req,res)=>{
     res.render("home",{blogs:allBlogs})
 })
 
-app.get("/single/:id",(req,res)=>{
-    res.render("singleBlog")
+app.get("/single/:id",async(req,res)=>{
+    const {id}=req.params
+   const singleBlogs= await blogs.findAll({
+        where:{
+            id:id
+        }
+    })
+    res.render("singleBlog",{singleBlogs})
 })
 
 app.get("/createBlog",(req,res)=>{
@@ -37,6 +43,13 @@ app.post("/createBlog",async(req,res)=>{
     res.redirect("/")
 })
 
+app.get("/delete/:id",async(req,res)=>{
+    const {id}= req.params
+   await blogs.destroy({where:{
+        id:id
+    }})
+    res.redirect("/")
+})
 
 const PORT = process.env.PORT || 6000
 app.listen(3000,()=>{

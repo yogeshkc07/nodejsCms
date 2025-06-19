@@ -12,8 +12,14 @@ app.set("view engine","ejs")
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.get("/",(req,res)=>{
-    res.render("home")
+app.get("/",async(req,res)=>{
+    const allBlogs = await blogs.findAll()
+
+    res.render("home",{blogs:allBlogs})
+})
+
+app.get("/single/:id",(req,res)=>{
+    res.render("singleBlog")
 })
 
 app.get("/createBlog",(req,res)=>{
@@ -28,7 +34,7 @@ app.post("/createBlog",async(req,res)=>{
         description
        })
 
-    res.send("form submitted successfully")
+    res.redirect("/")
 })
 
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Single Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav .back-link a {
+      color: white;
+      text-decoration: none;
+      background-color: #2980b9;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav .back-link a:hover {
+      background-color: #3498db;
+    }
+
+    /* Blog Content */
+    .blog-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-container h1 {
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .blog-container h3 {
+      font-size: 18px;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+      a{
+         color: white;
+      text-decoration: none;
+    }
+
+    .blog-container p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .blog-container .date {
+      font-size: 14px;
+      color: #888;
+      margin-top: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><a href="/">CMS</a></div>
+    <div class="back-link">
+      <a href="/">← Back to Blogs</a>
+    </div>
+  </nav>
+
+  <!-- Blog Content -->
+  <div class="blog-container">
+    <h1>The Art of Simplicity in Web Design</h1>
+    <h3>Why Less is More</h3>
+    <p>
+      In today’s fast-paced digital world, simplicity has become a crucial aspect of web design. Clean layouts, minimal color schemes, and intuitive navigation not only improve user experience but also load faster and are easier to maintain. 
+      <br><br>
+      A minimalist design allows your content to shine without unnecessary distractions. It makes your website more accessible and user-friendly across different devices and platforms. Embracing simplicity doesn’t mean boring—it means clarity, focus, and elegance.
+    </p>
+    <p class="date">Published on June 19, 2025</p>
+  </div>
+
+</body>
+</html>

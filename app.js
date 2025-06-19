@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 
 require("dotenv").config()
+require("./model/index")
 
 app.set("view engine","ejs")
 

@@ -1,7 +1,10 @@
 const express = require("express")
+const { blogs } = require("./model/index")
 const app = express()
 
 require("dotenv").config()
+
+//database connection
 require("./model/index")
 
 app.set("view engine","ejs")
@@ -17,8 +20,14 @@ app.get("/createBlog",(req,res)=>{
     res.render("createBlog")
 })
 
-app.post("/createBlog",(req,res)=>{
-    console.log(req.body)
+app.post("/createBlog",async(req,res)=>{
+       const {title,subTitle,description}= req.body
+      await blogs.create({
+        title,
+        subTitle,
+        description
+       })
+
     res.send("form submitted successfully")
 })
 
